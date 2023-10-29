@@ -1,3 +1,6 @@
+cp catalogue.service /etc/systemd/system/catalogue.service
+cp mongodb.repo /etc/yum.repos.d/mongo.repo
+
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 dnf install nodejs -y
 useradd roboshop
@@ -8,6 +11,10 @@ unzip /tmp/catalogue.zip
 cd /app
 npm install
 
-cp catalogue.service /etc/systemd/system/catalogue.service
+
+dnf install mongodb-org-shell -y
+mongo --host mongodb.sdevopsd74.online </app/schema/catalogue.js
 
 systemctl daemon-reload
+systemctl enable catalogue
+systemctl start catalogue
