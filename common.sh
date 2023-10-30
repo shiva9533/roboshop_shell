@@ -129,13 +129,11 @@ func_python() {
  }
 
 func_golang() {
-  echo -e "\e[36m>>>>>>>>>>>> Create ${component}.service    <<<<<<<<<<<<\e[0m"
-  cp ${component}.service /etc/systemd/system/${component}.service
 
-  echo -e "\e[36m>>>>>>>>>>>>  golang   <<<<<<<<<<<<\e[0m"
+    echo -e "\e[36m>>>>>>>>>>>>  golang   <<<<<<<<<<<<\e[0m"
   dnf install golang -y &>>${log}
-
   func_apppreq
+
   go mod init ${component}
   go get
   go build
