@@ -1,3 +1,12 @@
+
+component=dispatch
+source common.sh
+
+func_golang
+
+
+
+
 cp dispatch.service /etc/systemd/system/dispatch.service
 
 dnf install golang -y
