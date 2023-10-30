@@ -73,7 +73,7 @@ func_nodejs() {
   log=/tmp/roboshop.log
 
   echo -e "\e[36m>>>>>>>>>>>>  Create MongoDB Repo  <<<<<<<<<<<<\e[0m"
-  cp mongo.repo /etc/yum.repos.d/mongo.repo &>>${log}
+  cp mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${log}
   func_exit_status
 
   echo -e "\e[36m>>>>>>>>>>>>  Install NodeJS Repos  <<<<<<<<<<<<\e[0m"
