@@ -1,6 +1,6 @@
 #!/bin/bash
 
-###### Change these values ###
+###### # Change these values ###
 ZONE_ID=$(aws route53 list-hosted-zones --query "HostedZones[*].{ID:Id,Name:Name,Private:Config.PrivateZone}" --output text | awk '{print $1}' | awk -F / '{print $3}')
 DOMAIN_NAME=$(aws route53 list-hosted-zones --query "HostedZones[*].{ID:Id,Name:Name,Private:Config.PrivateZone}" --output text | awk '{print $2}' | sed -e 's/.$//')
 SG_NAME="allow-all"
